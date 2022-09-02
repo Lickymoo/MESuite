@@ -1,0 +1,7 @@
+depend: [MECore, MEInventories]
+name: ${project.name}
+version: ${project.version}
+author: ${author}
+main: ${corepackage}.metrade.METradePlugin
+description: ${project.description}
+api-version: ${mc-api-ver}

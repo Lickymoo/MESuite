@@ -1,0 +1,9 @@
+com\buoobuoo\mesuite\mepermissions\command\impl\PermissionCommand$group.class
+com\buoobuoo\mesuite\mepermissions\data\PlayerPermissionData.class
+com\buoobuoo\mesuite\mepermissions\command\impl\PermissionCommand.class
+com\buoobuoo\mesuite\mepermissions\gamehandler\listener\PrefixQueryEventListener.class
+com\buoobuoo\mesuite\mepermissions\MEPermissionsPlugin.class
+com\buoobuoo\mesuite\mepermissions\PermissionGroup.class
+com\buoobuoo\mesuite\mepermissions\PermissionManager.class
+com\buoobuoo\mesuite\mepermissions\data\PlayerPermissionDataManager.class
+com\buoobuoo\mesuite\mepermissions\serializer\PermissionGroupSerializer.class

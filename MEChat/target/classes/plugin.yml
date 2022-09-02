@@ -1,0 +1,7 @@
+depend: [MECore, MESocial, MEPlayerData, ProtocolLib]
+name: MEChat
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.mechat.MEChatPlugin
+description: ${project.description}
+api-version: 1.19

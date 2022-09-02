@@ -1,0 +1,7 @@
+depend: [MECore, MESocial, MEPlayerData, ProtocolLib]
+name: ${project.name}
+version: ${project.version}
+author: ${author}
+main: ${corepackage}.mechat.MEChatPlugin
+description: ${project.description}
+api-version: ${mc-api-ver}

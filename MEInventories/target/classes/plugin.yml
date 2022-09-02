@@ -1,0 +1,6 @@
+name: MEInventories
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.meinventories.MEInventoriesPlugin
+description: Custom Inventory Manager and DAOs
+api-version: 1.19

@@ -1,0 +1,7 @@
+depend: [MEInventories, ProtocolLib]
+name: ${project.name}
+version: ${project.version}
+author: ${author}
+main: ${corepackage}.mecore.MECorePlugin
+description: ${project.description}
+api-version: ${mc-api-ver}

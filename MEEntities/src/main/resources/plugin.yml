@@ -1,0 +1,7 @@
+depend: [MECore, ProtocolLib, ModelEngine]
+name: ${project.name}
+version: ${project.version}
+author: ${author}
+main: ${corepackage}.meentities.MEEntitiesPlugin
+description: ${project.description}
+api-version: ${mc-api-ver}

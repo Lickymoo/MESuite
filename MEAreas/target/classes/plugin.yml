@@ -1,0 +1,7 @@
+depend: [MECore, MEPlayerData, MEEntities]
+name: MEAreas
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.meareas.MEAreasPlugin
+description: Area Management
+api-version: 1.19

@@ -1,0 +1,13 @@
+com\buoobuoo\mesuite\mechat\gamehandler\listener\StaffMessagePacketListener.class
+com\buoobuoo\mesuite\mechat\ChatRestrictionMode.class
+com\buoobuoo\mesuite\mechat\gamehandler\listener\PlayerChatPacketListener.class
+com\buoobuoo\mesuite\mechat\dialogue\DialogueUtils.class
+com\buoobuoo\mesuite\mechat\MEChatPlugin.class
+com\buoobuoo\mesuite\mechat\command\impl\MessageCommand.class
+com\buoobuoo\mesuite\mechat\gamehandler\listener\PlayerChatPacketListener$1.class
+com\buoobuoo\mesuite\mechat\gamehandler\event\DialogueNextEvent.class
+com\buoobuoo\mesuite\mechat\command\impl\DialogueCommand.class
+com\buoobuoo\mesuite\mechat\ChatManager$1.class
+com\buoobuoo\mesuite\mechat\ChatContext.class
+com\buoobuoo\mesuite\mechat\ChatManager.class
+com\buoobuoo\mesuite\mechat\gamehandler\listener\PlayerMessagePacketListener.class

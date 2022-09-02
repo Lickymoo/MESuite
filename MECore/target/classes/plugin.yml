@@ -1,0 +1,7 @@
+depend: [MEInventories, ProtocolLib]
+name: MECore
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.mecore.MECorePlugin
+description: ME Essential plugin
+api-version: 1.19

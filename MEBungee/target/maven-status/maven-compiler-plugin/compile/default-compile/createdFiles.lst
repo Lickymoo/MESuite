@@ -1,0 +1,3 @@
+com\buoobuoo\mesuite\mebungee\MEBungeePlugin.class
+com\buoobuoo\mesuite\mebungee\party\PartyManager.class
+com\buoobuoo\mesuite\mebungee\gamehandler\listener\MovePlayerPacketListener.class

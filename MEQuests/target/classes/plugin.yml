@@ -1,0 +1,7 @@
+depend: [MECore, MEPlayerData, MEEntities, MEItems, MEAreas, MEChat, MEVFX, MECombat, MEInventories]
+name: MEQuests
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.mequests.MEQuestsPlugin
+description: Area Management
+api-version: 1.19

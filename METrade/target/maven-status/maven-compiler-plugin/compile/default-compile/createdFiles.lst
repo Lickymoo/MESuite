@@ -1,0 +1,8 @@
+com\buoobuoo\mesuite\metrade\p2p\inventory\impl\P2PTradeInstance.class
+com\buoobuoo\mesuite\metrade\packet\trade\p2p\P2PTradeInitiatePacket.class
+com\buoobuoo\mesuite\metrade\command\TradeCommand.class
+com\buoobuoo\mesuite\metrade\packet\trade\p2p\P2PTradeUpdatePacket.class
+com\buoobuoo\mesuite\metrade\p2p\inventory\impl\P2PTradeInventory.class
+com\buoobuoo\mesuite\metrade\METradePlugin.class
+com\buoobuoo\mesuite\metrade\p2p\P2PTradeManager.class
+com\buoobuoo\mesuite\metrade\packet\trade\p2p\P2PTradeCancelPacket.class

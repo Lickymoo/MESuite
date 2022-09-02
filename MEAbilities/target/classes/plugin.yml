@@ -1,0 +1,7 @@
+depend: [MEPlayerData]
+name: ${project.name}
+version: ${project.version}
+author: ${author}
+main: ${corepackage}.meabilities.MEAbilitiesPlugin
+description: ${project.description}
+api-version: ${mc-api-ver}

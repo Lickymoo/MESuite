@@ -1,0 +1,7 @@
+depend: [MECore, MEEntities]
+name: MEVFX
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.mevfx.MEVFXPlugin
+description: VFX Management
+api-version: 1.19

@@ -1,0 +1,7 @@
+depend: [MECore, MEInventories]
+name: METrade
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.metrade.METradePlugin
+description: Trdea Management System
+api-version: 1.19

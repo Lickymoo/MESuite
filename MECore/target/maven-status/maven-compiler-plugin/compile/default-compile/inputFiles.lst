@@ -1,0 +1,16 @@
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\gamehandler\listener\AnvilRenamePacketListener.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\persistence\MongoHook.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\MECorePlugin.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\persistence\serialization\VariableSerializer.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\persistence\serialization\impl\GameModeSerializer.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\command\impl\ServerCommand.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\gamehandler\listener\ProjectileHitEventListener.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\persistence\serialization\DoNotSerialize.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\persistence\serialization\impl\UUIDSerializer.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\gamehandler\event\AnvilRenameEvent.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\gamehandler\event\DatabaseConnectEvent.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\persistence\serialization\impl\ItemStackSerializer.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\gamehandler\event\UpdateSecondEvent.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\persistence\serialization\impl\LocationSerializer.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\persistence\serialization\impl\MaterialSerializer.java
+E:\IntelliJ\MESuite\MECore\src\main\java\com\buoobuoo\mesuite\mecore\gamehandler\event\UpdateTickEvent.java

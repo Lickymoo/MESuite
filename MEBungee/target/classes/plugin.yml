@@ -1,0 +1,6 @@
+name: MEBungee
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.mebungee.MEBungeePlugin
+description: ME Bungee plugin
+api-version: 1.19

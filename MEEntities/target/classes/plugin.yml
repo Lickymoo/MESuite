@@ -1,0 +1,7 @@
+depend: [MECore, ProtocolLib, ModelEngine]
+name: MEEntities
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.meentities.MEEntitiesPlugin
+description: Entity Management System
+api-version: 1.19

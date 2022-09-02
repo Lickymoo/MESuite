@@ -1,0 +1,7 @@
+depend: [MECore, MEPlayerData]
+name: MEItems
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.meitems.MEItemsPlugin
+description: Item Management System
+api-version: 1.19

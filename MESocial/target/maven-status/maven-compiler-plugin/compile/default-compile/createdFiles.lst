@@ -1,0 +1,6 @@
+com\buoobuoo\mesuite\mesocial\friend\PlayerFriendData.class
+com\buoobuoo\mesuite\mesocial\command\impl\PartyCommand.class
+com\buoobuoo\mesuite\mesocial\friend\FriendManager.class
+com\buoobuoo\mesuite\mesocial\command\impl\FriendCommand.class
+com\buoobuoo\mesuite\mesocial\MESocialPlugin.class
+com\buoobuoo\mesuite\mesocial\party\PartyManager.class

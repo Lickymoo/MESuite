@@ -1,0 +1,15 @@
+com\buoobuoo\mesuite\mequests\MEQuestsPlugin.class
+com\buoobuoo\mesuite\mequests\inventory\questrelated\ACT1_MQ2Inventory.class
+com\buoobuoo\mesuite\mequests\QuestLine.class
+com\buoobuoo\mesuite\mequests\command\QuestCommand.class
+com\buoobuoo\mesuite\mequests\util\CinematicConsumer.class
+com\buoobuoo\mesuite\mequests\data\ProfileQuestDataManager.class
+com\buoobuoo\mesuite\mequests\data\ProfileQuestData.class
+com\buoobuoo\mesuite\mequests\inventory\QuestMainInventory.class
+com\buoobuoo\mesuite\mequests\gamehandler\event\ACT1_MQ2PickItemEvent.class
+com\buoobuoo\mesuite\mequests\impl\act1\ACT1_MQ1.class
+com\buoobuoo\mesuite\mequests\QuestManager.class
+com\buoobuoo\mesuite\mequests\gamehandler\listener\ProfileDataRemoveEventListener.class
+com\buoobuoo\mesuite\mequests\impl\act1\ACT1_MQ3.class
+com\buoobuoo\mesuite\mequests\gamehandler\listener\ProfileDataLoadEventListener.class
+com\buoobuoo\mesuite\mequests\impl\act1\ACT1_MQ2.class

@@ -1,0 +1,9 @@
+com\buoobuoo\mesuite\meabilities\Ability.class
+com\buoobuoo\mesuite\meabilities\MEAbilitiesPlugin.class
+com\buoobuoo\mesuite\meabilities\AbilityManager$1.class
+com\buoobuoo\mesuite\meabilities\item\AbilityGemItem.class
+com\buoobuoo\mesuite\meabilities\data\ProfileAbilityData.class
+com\buoobuoo\mesuite\meabilities\data\ProfileAbilityDataManager.class
+com\buoobuoo\mesuite\meabilities\AbilityCastType.class
+com\buoobuoo\mesuite\meabilities\AbilityType.class
+com\buoobuoo\mesuite\meabilities\AbilityManager.class

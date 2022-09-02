@@ -1,0 +1,7 @@
+depend: [MEEntities, MEPlayerData, MEItems]
+name: MECombat
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.mecombat.MECombatPlugin
+description: Combat and Stats Management
+api-version: 1.19

@@ -1,0 +1,5 @@
+com\buoobuoo\mesuite\mecombat\DamageInstanceType.class
+com\buoobuoo\mesuite\mecombat\DamageManager.class
+com\buoobuoo\mesuite\mecombat\gamehandler\event\CustomEntityKillByPlayerEvent.class
+com\buoobuoo\mesuite\mecombat\DamageInstanceDirection.class
+com\buoobuoo\mesuite\mecombat\MECombatPlugin.class

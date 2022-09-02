@@ -1,0 +1,7 @@
+depend: [MECore, MEPlayerData, MEEntities, MEItems, MEAreas, MEChat, MEVFX, MECombat, MEInventories]
+name: ${project.name}
+version: ${project.version}
+author: ${author}
+main: ${corepackage}.mequests.MEQuestsPlugin
+description: ${project.description}
+api-version: ${mc-api-ver}

@@ -1,0 +1,7 @@
+depend: [MECore, MEPlayerData, MEEntities]
+name: ${project.name}
+version: ${project.version}
+author: ${author}
+main: ${corepackage}.meareas.MEAreasPlugin
+description: ${project.description}
+api-version: ${mc-api-ver}

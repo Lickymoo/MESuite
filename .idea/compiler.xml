@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="MECombat" />
+        <module name="MEInventories" />
+        <module name="MEChat" />
+        <module name="MECore" />
+        <module name="MEBungee" />
+        <module name="MEQuests" />
+        <module name="MEAreas" />
+        <module name="MEPlayerData" />
+        <module name="MELinker" />
+        <module name="MEPermissions" />
+        <module name="MEVFX" />
+        <module name="MEEntities" />
+        <module name="MESocial" />
+        <module name="MEAbilities" />
+        <module name="MEItems" />
+        <module name="MEUtils" />
+        <module name="METrade" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="MEPlayerManager" target="16" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MECore" options="-parameters" />
+      <module name="MEEntities" options="" />
+      <module name="MEUtils" options="" />
+    </option>
+  </component>
+</project>

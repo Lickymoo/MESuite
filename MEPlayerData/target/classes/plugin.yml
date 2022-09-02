@@ -1,0 +1,7 @@
+depend: [MECore, MEInventories]
+name: MEPlayerData
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.meplayerdata.MEPlayerDataPlugin
+description: Player Data Management
+api-version: 1.19

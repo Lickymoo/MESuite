@@ -1,0 +1,13 @@
+com\buoobuoo\mesuite\meareas\MobSpawningArea.class
+com\buoobuoo\mesuite\meareas\TownArea.class
+com\buoobuoo\mesuite\meareas\impl\aramore\AramoreAbandonedShrineArea.class
+com\buoobuoo\mesuite\meareas\gamehandler\event\AreaExitEvent.class
+com\buoobuoo\mesuite\meareas\impl\aramore\AramoreArea.class
+com\buoobuoo\mesuite\meareas\data\ProfileAreaData.class
+com\buoobuoo\mesuite\meareas\gamehandler\event\AreaEnterEvent.class
+com\buoobuoo\mesuite\meareas\Area.class
+com\buoobuoo\mesuite\meareas\impl\aramore\AramoreWolfArea.class
+com\buoobuoo\mesuite\meareas\AreaManager.class
+com\buoobuoo\mesuite\meareas\data\ProfileAreaDataManager.class
+com\buoobuoo\mesuite\meareas\MEAreasPlugin.class
+com\buoobuoo\mesuite\meareas\gamehandler\listener\PlayerDeathEventListener.class
