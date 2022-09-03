@@ -12,7 +12,6 @@ import com.buoobuoo.mesuite.metrade.packet.trade.p2p.P2PTradeUpdatePacket;
 import com.buoobuoo.mesuite.meutils.command.CommandManager;
 import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import lombok.Getter;
-import org.bukkit.plugin.PluginManager;
 
 @Getter
 public class METradePlugin extends MEPlugin {
@@ -30,12 +29,11 @@ public class METradePlugin extends MEPlugin {
 
     @Override
     public void initDependencies() {
-        PluginManager pluginManager = getServer().getPluginManager();
-        this.meCorePlugin = (MECorePlugin) pluginManager.getPlugin("MECore");
+        this.meCorePlugin = getPlugin(MECorePlugin.class);
         this.meLinker = meCorePlugin.getMeLinker();
         this.commandManager = meCorePlugin.getCommandManager();
 
-        this.meInventoriesPlugin = (MEInventoriesPlugin) pluginManager.getPlugin("MEInventories");
+        this.meInventoriesPlugin = getPlugin(MEInventoriesPlugin.class);
         this.inventoryManager = meInventoriesPlugin.getInventoryManager();
 
         this.meLinker.getPacketManager().registerPacket("P2P_TRADE_UPDATE", P2PTradeUpdatePacket.class);

@@ -12,7 +12,6 @@ import com.buoobuoo.mesuite.meutils.JavaUtils;
 import com.buoobuoo.mesuite.meutils.command.CommandManager;
 import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import lombok.Getter;
-import org.bukkit.plugin.PluginManager;
 
 @Getter
 public class MEPermissionsPlugin extends MEPlugin {
@@ -31,13 +30,12 @@ public class MEPermissionsPlugin extends MEPlugin {
 
     @Override
     public void initDependencies() {
-        PluginManager pluginManager = getServer().getPluginManager();
-        this.meCorePlugin = (MECorePlugin) pluginManager.getPlugin("MECore");
+        this.meCorePlugin = getPlugin(MECorePlugin.class);
         this.commandManager = meCorePlugin.getCommandManager();
         this.mongoHook = meCorePlugin.getMongoHook();
         this.mongoHook.registerSerializer(PermissionGroup.class, new PermissionGroupSerializer());
 
-        this.mePlayerDataPlugin = (MEPlayerDataPlugin) pluginManager.getPlugin("MEPlayerData");
+        this.mePlayerDataPlugin = getPlugin(MEPlayerDataPlugin.class);
         this.playerDataManager = mePlayerDataPlugin.getPlayerDataManager();
 
 

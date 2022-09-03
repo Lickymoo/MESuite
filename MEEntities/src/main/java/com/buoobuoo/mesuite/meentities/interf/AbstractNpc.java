@@ -66,7 +66,7 @@ public abstract class AbstractNpc extends ServerPlayer implements NpcEntity {
         setDead(false);
         setIsReady(true);
         net.minecraft.world.entity.Entity ent = asEntity();
-        ((ServerPlayer)this).getGameProfile().getProperties().put("textures", new Property("textures", textureBase64(), textureSignature()));
+        this.getGameProfile().getProperties().put("textures", new Property("textures", textureBase64(), textureSignature()));
 
         ent.setPos(loc.getX(), loc.getY(), loc.getZ());
 

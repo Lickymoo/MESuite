@@ -1,8 +1,8 @@
-E:\IntelliJ\MESuite\MEPermissions\src\main\java\com\buoobuoo\mesuite\mepermissions\gamehandler\event\PrefixQueryEventListener.java
 E:\IntelliJ\MESuite\MEPermissions\src\main\java\com\buoobuoo\mesuite\mepermissions\PermissionGroup.java
 E:\IntelliJ\MESuite\MEPermissions\src\main\java\com\buoobuoo\mesuite\mepermissions\MEPermissionsPlugin.java
 E:\IntelliJ\MESuite\MEPermissions\src\main\java\com\buoobuoo\mesuite\mepermissions\data\PlayerPermissionDataManager.java
 E:\IntelliJ\MESuite\MEPermissions\src\main\java\com\buoobuoo\mesuite\mepermissions\serializer\PermissionGroupSerializer.java
 E:\IntelliJ\MESuite\MEPermissions\src\main\java\com\buoobuoo\mesuite\mepermissions\data\PlayerPermissionData.java
+E:\IntelliJ\MESuite\MEPermissions\src\main\java\com\buoobuoo\mesuite\mepermissions\gamehandler\listener\PrefixQueryEventListener.java
 E:\IntelliJ\MESuite\MEPermissions\src\main\java\com\buoobuoo\mesuite\mepermissions\command\impl\PermissionCommand.java
 E:\IntelliJ\MESuite\MEPermissions\src\main\java\com\buoobuoo\mesuite\mepermissions\PermissionManager.java

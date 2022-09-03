@@ -1,0 +1,6 @@
+com\buoobuoo\mesuite\meaggregator\inventory\impl\playermenu\PlayerMenuSelfMainInventory.class
+com\buoobuoo\mesuite\meaggregator\inventory\impl\playermenu\AbilityInventory.class
+com\buoobuoo\mesuite\meaggregator\gamehandler\listener\PlayerManagerItemListener.class
+com\buoobuoo\mesuite\meaggregator\inventory\impl\playermenu\SettingsMenuInventory.class
+com\buoobuoo\mesuite\meaggregator\MEAggregatorPlugin.class
+com\buoobuoo\mesuite\meaggregator\inventory\impl\playermenu\AbilityCastTypeInventory.class

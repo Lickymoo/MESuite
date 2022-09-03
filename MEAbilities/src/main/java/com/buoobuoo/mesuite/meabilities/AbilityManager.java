@@ -1,6 +1,10 @@
 package com.buoobuoo.mesuite.meabilities;
 
 import com.buoobuoo.mesuite.meabilities.data.ProfileAbilityData;
+import com.buoobuoo.mesuite.meabilities.impl.BulwarkAbility;
+import com.buoobuoo.mesuite.meabilities.impl.DashAbility;
+import com.buoobuoo.mesuite.meabilities.impl.FlagellantAbility;
+import com.buoobuoo.mesuite.meabilities.impl.SlashAbility;
 import com.buoobuoo.mesuite.mecore.gamehandler.event.UpdateTickEvent;
 import com.buoobuoo.mesuite.meitems.CustomItem;
 import com.buoobuoo.mesuite.meitems.interf.type.RangedWeapon;
@@ -30,14 +34,13 @@ public class AbilityManager implements Listener {
     private final MEAbilitiesPlugin plugin;
     public AbilityManager(MEAbilitiesPlugin plugin){
         this.plugin = plugin;
-    /*
+
         registerAbilities(
                 new SlashAbility(),
                 new DashAbility(),
                 new FlagellantAbility(),
                 new BulwarkAbility()
         );
-    */
     }
 
     public void registerAbilities(Ability... abilities){
@@ -78,7 +81,8 @@ public class AbilityManager implements Listener {
 
     public List<Ability> getPlayerAbilities(ProfileAbilityData profileData){
         List<Ability> abilities = new ArrayList<>();
-        for(String id : profileData.getAbilityIDs()){
+        String[] abil = profileData.getAbilityIDs();
+        for(String id : abil == null ? new String[0] : abil){
             abilities.add(getAbilityByID(id));
         }
         return abilities;
@@ -134,7 +138,7 @@ public class AbilityManager implements Listener {
     }
 
     public void addAbilityToPlayer(ProfileAbilityData profileData, Ability ability){
-        String[] abilityIds = JavaUtils.setArrSize(profileData.getAbilityIDs(), 4);
+        String[] abilityIds = JavaUtils.setArrSize(profileData.getAbilityIDs() == null ? new String[4] : profileData.getAbilityIDs(), 4);
         abilityIds = JavaUtils.insertEmptyStr(abilityIds, ability.getId());
         profileData.setAbilityIDs(abilityIds);
     }
@@ -290,8 +294,6 @@ public class AbilityManager implements Listener {
 
     @EventHandler
     public void onInteract(PlayerInteractEvent event){
-        if(event.isCancelled())
-            return;
 
         Player player = event.getPlayer();
         String currCombo = abilityComboMap.getOrDefault(player.getUniqueId(), "");

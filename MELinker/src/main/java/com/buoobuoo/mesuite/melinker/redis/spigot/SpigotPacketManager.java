@@ -5,6 +5,7 @@ import com.buoobuoo.mesuite.melinker.redis.AbsPacketManager;
 import com.buoobuoo.mesuite.melinker.redis.packet.MECallbackPacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.MECallbackResponsePacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.MEPacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerPosePacket;
 import com.buoobuoo.mesuite.melinker.util.Util;
 import com.google.gson.Gson;
 import org.bukkit.Bukkit;
@@ -25,6 +26,10 @@ public final class SpigotPacketManager implements AbsPacketManager, Listener {
         this.plugin = plugin;
         this.redisConnection = redisConnection;
         Util.registerDefaultPackets(this);
+
+        //spigot specific
+        registerPacket("PLAYER_TOGGLE_POSE", PlayerPosePacket.class);
+
         plugin.getLogger().info("Registered " + packetRegistry.size() + " packets");
     }
 
@@ -49,7 +54,7 @@ public final class SpigotPacketManager implements AbsPacketManager, Listener {
 
         Class<? extends MEPacket> packetClass = packetRegistry.get(id);
         if (packetClass == null) {
-            plugin.getLogger().warning("Received packet " + id + " which has not been registered. Ignoring packet.");
+            //plugin.getLogger().warning("Received packet " + id + " which has not been registered. Ignoring packet.");
             return;
         }
 

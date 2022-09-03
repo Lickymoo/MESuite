@@ -21,6 +21,7 @@ com\buoobuoo\mesuite\meitems\additional\attributes\impl\attack\BaseMagicItemAttr
 com\buoobuoo\mesuite\meitems\additional\attributes\VariableItemAttribute.class
 com\buoobuoo\mesuite\meitems\command\impl\ItemCommand$debug.class
 com\buoobuoo\mesuite\meitems\interf\NotStackable.class
+com\buoobuoo\mesuite\meitems\gamehandler\listener\ItemRequirementEventListener.class
 com\buoobuoo\mesuite\meitems\interf\AlternateHeldItem.class
 com\buoobuoo\mesuite\meitems\interf\type\Armour.class
 com\buoobuoo\mesuite\meitems\interf\AttributedItem.class
@@ -35,6 +36,7 @@ com\buoobuoo\mesuite\meitems\impl\BubysHelmetItem.class
 com\buoobuoo\mesuite\meitems\impl\weapon\starter\StarterAxeItem.class
 com\buoobuoo\mesuite\meitems\additional\attributes\impl\attack\BasePhysicalItemAttribute.class
 com\buoobuoo\mesuite\meitems\impl\quest\act1\ACT1_MQ2_NecklaceItem.class
+com\buoobuoo\mesuite\meitems\gamehandler\listener\PlayerCreativeInteractEventListener.class
 com\buoobuoo\mesuite\meitems\interf\type\RangedWeapon.class
 com\buoobuoo\mesuite\meitems\additional\attributes\impl\defense\MaximumManaItemAttribute.class
 com\buoobuoo\mesuite\meitems\command\impl\ItemCommand$debug$give.class

@@ -7,6 +7,6 @@ public interface QuestItem extends Modifier {
 
     @Override
     default void modifierCreate(MEItemsPlugin plugin, ItemBuilder ib){
-        ib.nbtInteger(plugin, "me-quest-item", 1);
+        ib.nbtInteger("me-quest-item", 1);
     }
 }

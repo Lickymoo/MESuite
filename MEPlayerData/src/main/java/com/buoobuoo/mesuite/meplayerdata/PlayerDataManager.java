@@ -22,20 +22,16 @@ import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
-import org.bukkit.Location;
 import org.bukkit.WeatherType;
-import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
-import org.checkerframework.checker.units.qual.Prefix;
 
 import java.util.*;
 
@@ -371,6 +367,9 @@ public class PlayerDataManager implements Listener {
         if(currentExp >= requiredExp){
             profileData.setLevel(level+1);
             profileData.setExperience(currentExp-requiredExp);
+
+            PlayerLevelUpEvent levelUpEvent = new PlayerLevelUpEvent(player);
+            Bukkit.getPluginManager().callEvent(levelUpEvent);
             /*
             ParticleDirectory.LEVELUP.playEffect(plugin, player.getLocation(), 1, 2.5, 3);
 

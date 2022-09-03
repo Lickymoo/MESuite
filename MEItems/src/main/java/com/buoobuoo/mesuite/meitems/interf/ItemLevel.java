@@ -9,7 +9,7 @@ public interface ItemLevel extends Modifier {
 
     @Override
     default void modifierCreate(MEItemsPlugin plugin, ItemBuilder ib){
-        ib.nbtInt(plugin, "me-item-level", itemLevel());
+        ib.nbtInt("me-item-level", itemLevel());
         ib.lore(1, "&r&7Item Level &f" + itemLevel());
     }
 }

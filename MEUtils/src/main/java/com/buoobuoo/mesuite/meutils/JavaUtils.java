@@ -7,6 +7,19 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class JavaUtils {
 
+    public static String[] stringToArr(String str){
+        return str.split(",");
+    }
+
+    public static String arrToString(String[] arr){
+        StringBuilder sb = new StringBuilder();
+        for(String str : arr){
+            sb.append(str);
+            sb.append(",");
+        }
+        return sb.toString();
+    }
+
     public static <T> T[] concatenateArrays(T[] a, T[] b){
         List<T> list = new ArrayList<>();
         list.addAll(List.of(a));

@@ -1,4 +1,4 @@
-depend: [MEPlayerData]
+depend: [MEPlayerData, MECore, MEItems]
 name: ${project.name}
 version: ${project.version}
 author: ${author}

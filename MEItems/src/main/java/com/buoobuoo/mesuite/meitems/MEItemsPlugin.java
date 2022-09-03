@@ -3,13 +3,14 @@ package com.buoobuoo.mesuite.meitems;
 import com.buoobuoo.mesuite.mecore.MECorePlugin;
 import com.buoobuoo.mesuite.meitems.additional.attributes.ItemAttributeManager;
 import com.buoobuoo.mesuite.meitems.command.impl.ItemCommand;
+import com.buoobuoo.mesuite.meitems.gamehandler.listener.ItemRequirementEventListener;
+import com.buoobuoo.mesuite.meitems.gamehandler.listener.PlayerCreativeInteractEventListener;
 import com.buoobuoo.mesuite.meitems.gamehandler.listener.QueryItemModifiersEventListener;
 import com.buoobuoo.mesuite.meplayerdata.MEPlayerDataPlugin;
 import com.buoobuoo.mesuite.meplayerdata.PlayerDataManager;
 import com.buoobuoo.mesuite.meutils.command.CommandManager;
 import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import lombok.Getter;
-import org.bukkit.plugin.PluginManager;
 
 @Getter
 public class MEItemsPlugin extends MEPlugin {
@@ -27,11 +28,10 @@ public class MEItemsPlugin extends MEPlugin {
 
     @Override
     public void initDependencies() {
-        PluginManager pluginManager = getServer().getPluginManager();
-        this.meCorePlugin = (MECorePlugin)pluginManager.getPlugin("MECore");
+        this.meCorePlugin = getPlugin(MECorePlugin.class);
         this.commandManager = meCorePlugin.getCommandManager();
 
-        this.mePlayerDataPlugin = (MEPlayerDataPlugin)pluginManager.getPlugin("MEPlayerData");
+        this.mePlayerDataPlugin = getPlugin(MEPlayerDataPlugin.class);
         this.playerDataManager = mePlayerDataPlugin.getPlayerDataManager();
     }
 
@@ -44,7 +44,10 @@ public class MEItemsPlugin extends MEPlugin {
     @Override
     public void initListeners() {
         registerEvents(
-                new QueryItemModifiersEventListener(this)
+                new QueryItemModifiersEventListener(this),
+
+                new ItemRequirementEventListener(this),
+                new PlayerCreativeInteractEventListener(this)
         );
 
     }

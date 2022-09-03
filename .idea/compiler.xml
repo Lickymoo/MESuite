@@ -22,6 +22,7 @@
         <module name="MESocial" />
         <module name="MEAbilities" />
         <module name="MEItems" />
+        <module name="MEAggregator" />
         <module name="MEUtils" />
         <module name="METrade" />
       </profile>

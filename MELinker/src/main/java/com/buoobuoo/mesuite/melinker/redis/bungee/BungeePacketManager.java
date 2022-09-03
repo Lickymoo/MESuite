@@ -50,7 +50,7 @@ public final class BungeePacketManager implements AbsPacketManager, Listener {
 
         Class<? extends MEPacket> packetClass = packetRegistry.get(id);
         if (packetClass == null) {
-            plugin.getLogger().warning("Received packet " + id + " which has not been registered. Ignoring packet.");
+            //plugin.getLogger().warning("Received packet " + id + " which has not been registered. Ignoring packet.");
             return;
         }
 

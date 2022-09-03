@@ -4,7 +4,6 @@ import com.buoobuoo.mesuite.mechat.MEChatPlugin;
 import com.buoobuoo.mesuite.melinker.gamehandler.event.MEPacketEvent;
 import com.buoobuoo.mesuite.melinker.redis.packet.MEPacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.StaffMessagePacket;
-import com.buoobuoo.mesuite.mepermissions.MEPermissionsPlugin;
 import com.buoobuoo.mesuite.mepermissions.data.PlayerPermissionData;
 import com.buoobuoo.mesuite.meutils.Colour;
 import org.bukkit.Bukkit;

@@ -1,0 +1,7 @@
+depend: [MECore, MEInventories, MEPlayerData, MEAbilities, MEItems, MEQuests]
+name: MEAggregator
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.meaggregator.MEAggregatorPlugin
+description: VFX Management
+api-version: 1.19

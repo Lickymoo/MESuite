@@ -77,7 +77,7 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder nbtString(Plugin plugin, String id, String val){
+    public ItemBuilder nbtString(String id, String val){
         ItemMeta meta = this.item.getItemMeta();
         PersistentDataContainer pdc = meta.getPersistentDataContainer();
         pdc.set(NamespacedKey.minecraft(id), PersistentDataType.STRING, val);
@@ -85,7 +85,7 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder nbtDouble(Plugin plugin, String id, double val) {
+    public ItemBuilder nbtDouble(String id, double val) {
         ItemMeta meta = this.item.getItemMeta();
         PersistentDataContainer pdc = meta.getPersistentDataContainer();
         pdc.set(NamespacedKey.minecraft(id), PersistentDataType.DOUBLE, val);
@@ -93,7 +93,7 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder nbtInteger(Plugin plugin, String id, int val) {
+    public ItemBuilder nbtInteger(String id, int val) {
         ItemMeta meta = this.item.getItemMeta();
         PersistentDataContainer pdc = meta.getPersistentDataContainer();
         pdc.set(NamespacedKey.minecraft(id), PersistentDataType.INTEGER, val);
@@ -102,7 +102,7 @@ public class ItemBuilder {
     }
 
 
-    public ItemBuilder nbtInt(Plugin plugin, String id, int val) {
+    public ItemBuilder nbtInt(String id, int val) {
         ItemMeta meta = this.item.getItemMeta();
         PersistentDataContainer pdc = meta.getPersistentDataContainer();
         pdc.set(NamespacedKey.minecraft(id), PersistentDataType.INTEGER, val);

@@ -61,7 +61,7 @@ public class CustomItemManager implements Listener {
         if(item.getCustomModelData() != 0)
             ib.setCustomModelData(item.getCustomModelData());
 
-        ib.nbtString(plugin, "me-item-id", item.getId());
+        ib.nbtString("me-item-id", item.getId());
 
         List<Class<?>> interfaces = List.of(item.getClass().getInterfaces());
         for(Class<? extends Modifier> cl : modifierHandlers){

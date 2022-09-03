@@ -1,7 +1,7 @@
 package com.buoobuoo.mesuite.meplayerdata.model;
 
-import com.buoobuoo.mesuite.mecore.persistence.serialization.DoNotSerialize;
 import com.buoobuoo.mesuite.meplayerdata.stats.PlayerStatInstance;
+import com.buoobuoo.mesuite.meutils.ItemBuilder;
 import com.buoobuoo.mesuite.meutils.stats.TemporaryStatModifier;
 import lombok.Getter;
 import lombok.Setter;
@@ -75,6 +75,8 @@ public class ProfileData {
         player.setGameMode(gameMode);
         player.setFlying(flying);
 
+        ItemStack playerManagerItem = new ItemBuilder(Material.DIAMOND).name("&r&fPlayer Menu").lore("&7Click to open Player Menu").create();
+        player.getInventory().setItem(8, playerManagerItem);
     }
 
 

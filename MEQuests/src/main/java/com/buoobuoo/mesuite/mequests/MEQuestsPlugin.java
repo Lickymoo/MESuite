@@ -21,7 +21,6 @@ import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import com.buoobuoo.mesuite.mevfx.MEVFXPlugin;
 import com.buoobuoo.mesuite.mevfx.cinematic.SpectatorManager;
 import lombok.Getter;
-import org.bukkit.plugin.PluginManager;
 
 @Getter
 public class MEQuestsPlugin extends MEPlugin {
@@ -54,27 +53,26 @@ public class MEQuestsPlugin extends MEPlugin {
 
     @Override
     public void initDependencies() {
-        PluginManager pluginManager = getServer().getPluginManager();
-        this.meCorePlugin = (MECorePlugin) pluginManager.getPlugin("MECore");
+        this.meCorePlugin = getPlugin(MECorePlugin.class);
         this.mongoHook = meCorePlugin.getMongoHook();
         this.commandManager = meCorePlugin.getCommandManager();
 
-        this.mePlayerDataPlugin = (MEPlayerDataPlugin) pluginManager.getPlugin("MEPlayerData");
+        this.mePlayerDataPlugin = getPlugin(MEPlayerDataPlugin.class);
         this.playerDataManager = mePlayerDataPlugin.getPlayerDataManager();
 
-        this.meEntitiesPlugin = (MEEntitiesPlugin) pluginManager.getPlugin("MEEntities");
+        this.meEntitiesPlugin = getPlugin(MEEntitiesPlugin.class);
         this.entityManager = meEntitiesPlugin.getEntityManager();
 
-        this.meChatPlugin = (MEChatPlugin) pluginManager.getPlugin("MEChat");
+        this.meChatPlugin = getPlugin(MEChatPlugin.class);
         this.chatManager = meChatPlugin.getChatManager();
 
-        this.meItemsPlugin = (MEItemsPlugin) pluginManager.getPlugin("MEItems");
+        this.meItemsPlugin = getPlugin(MEItemsPlugin.class);
         this.customItemManager = meItemsPlugin.getCustomItemManager();
 
-        this.mevfxPlugin = (MEVFXPlugin) pluginManager.getPlugin("MEVFX");
+        this.mevfxPlugin = getPlugin(MEVFXPlugin.class);
         this.spectatorManager = mevfxPlugin.getSpectatorManager();
 
-        this.meInventoriesPlugin = (MEInventoriesPlugin) pluginManager.getPlugin("MEInventories");
+        this.meInventoriesPlugin = getPlugin(MEInventoriesPlugin.class);
         this.inventoryManager = meInventoriesPlugin.getInventoryManager();
     }
 

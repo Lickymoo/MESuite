@@ -8,6 +8,7 @@ com\buoobuoo\mesuite\meutils\navigation\RouteSingularPlayer.class
 com\buoobuoo\mesuite\meutils\Colour.class
 com\buoobuoo\mesuite\meutils\gamehandler\event\PlayerKillEnemyEvent.class
 com\buoobuoo\mesuite\meutils\Color.class
+com\buoobuoo\mesuite\meutils\ByteBufData.class
 com\buoobuoo\mesuite\meutils\gamehandler\event\PlayerCritEvent.class
 com\buoobuoo\mesuite\meutils\stats\TemporaryStatModifier.class
 com\buoobuoo\mesuite\meutils\stats\EntityStatInstance.class

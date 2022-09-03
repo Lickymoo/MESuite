@@ -109,7 +109,7 @@ public class ProfileInventory extends CustomInventory {
 
             mat = mat == null ? Material.WOODEN_SWORD : mat;
 
-            ItemStack item = new ItemBuilder(mat).name("&r&f" + name).nbtString(plugin, "me-profile-id", uuid.toString()).lore("&r&7Level &r&f" + level, " ", "&r&fRight click &7to edit profile", "&r&fLeft click &7to select profile").create();
+            ItemStack item = new ItemBuilder(mat).name("&r&f" + name).nbtString("me-profile-id", uuid.toString()).lore("&r&7Level &r&f" + level, " ", "&r&fRight click &7to edit profile", "&r&fLeft click &7to select profile").create();
             inv.setItem(index++, item);
         }
 

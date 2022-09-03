@@ -25,6 +25,7 @@
         <module>MEQuests</module>
         <module>MEPermissions</module>
         <module>MEVFX</module>
+        <module>MEAggregator</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,6 +1,5 @@
 package com.buoobuoo.mesuite.meplayerdata.model;
 
-import com.buoobuoo.mesuite.mecore.persistence.serialization.DoNotSerialize;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;

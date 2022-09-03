@@ -12,7 +12,6 @@ import com.buoobuoo.mesuite.meplayerdata.packet.SuspendPlayerDataPacket;
 import com.buoobuoo.mesuite.meutils.command.CommandManager;
 import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import lombok.Getter;
-import org.bukkit.Bukkit;
 
 @Getter
 public class MEPlayerDataPlugin extends MEPlugin {
@@ -29,8 +28,8 @@ public class MEPlayerDataPlugin extends MEPlugin {
 
     @Override
     public void initDependencies(){
-        this.meCorePlugin = (MECorePlugin) Bukkit.getPluginManager().getPlugin("MECore");
-        this.meInventoriesPlugin = (MEInventoriesPlugin) Bukkit.getPluginManager().getPlugin("MEInventories");
+        this.meCorePlugin = getPlugin(MECorePlugin.class);
+        this.meInventoriesPlugin = getPlugin(MEInventoriesPlugin.class);
         this.mongoHook = meCorePlugin.getMongoHook();
         this.inventoryManager = meInventoriesPlugin.getInventoryManager();
 

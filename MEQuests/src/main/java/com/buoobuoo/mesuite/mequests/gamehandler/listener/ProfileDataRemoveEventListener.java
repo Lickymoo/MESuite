@@ -1,6 +1,5 @@
 package com.buoobuoo.mesuite.mequests.gamehandler.listener;
 
-import com.buoobuoo.mesuite.meplayerdata.gamehandler.event.ProfileDataLoadEvent;
 import com.buoobuoo.mesuite.meplayerdata.gamehandler.event.ProfileDataRemoveEvent;
 import com.buoobuoo.mesuite.mequests.MEQuestsPlugin;
 import org.bukkit.Bukkit;

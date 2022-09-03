@@ -51,6 +51,7 @@ public class MongoHook {
         registerSerializer(ItemStack[].class, new ItemStackSerializer());
         registerSerializer(Location.class, new LocationSerializer());
         registerSerializer(GameMode.class, new GameModeSerializer());
+        registerSerializer(String[].class, new StringArraySerializer());
 
         Bukkit.getScheduler().runTaskLaterAsynchronously(plugin, this::init, 1);
     }

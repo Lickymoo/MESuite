@@ -3,7 +3,6 @@ package com.buoobuoo.mesuite.mepermissions.command.impl;
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.CommandCompletion;
-import co.aikar.commands.annotation.HelpCommand;
 import co.aikar.commands.annotation.Subcommand;
 import co.aikar.commands.bukkit.contexts.OnlinePlayer;
 import com.buoobuoo.mesuite.mepermissions.MEPermissionsPlugin;

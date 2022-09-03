@@ -11,7 +11,6 @@ import com.buoobuoo.mesuite.mesocial.party.PartyManager;
 import com.buoobuoo.mesuite.meutils.command.CommandManager;
 import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import lombok.Getter;
-import org.bukkit.plugin.PluginManager;
 
 import java.util.UUID;
 
@@ -37,8 +36,7 @@ public class MESocialPlugin extends MEPlugin {
 
     @Override
     public void initDependencies(){
-        PluginManager pluginManager = getServer().getPluginManager();
-        this.meCorePlugin = (MECorePlugin) pluginManager.getPlugin("MECore");
+        this.meCorePlugin = getPlugin(MECorePlugin.class);
         this.mongoHook = meCorePlugin.getMongoHook();
         this.meLinker = meCorePlugin.getMeLinker();
 

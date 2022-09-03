@@ -9,7 +9,6 @@ import com.buoobuoo.mesuite.meplayerdata.MEPlayerDataPlugin;
 import com.buoobuoo.mesuite.meplayerdata.PlayerDataManager;
 import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import lombok.Getter;
-import org.bukkit.plugin.PluginManager;
 
 @Getter
 public class MECombatPlugin extends MEPlugin {
@@ -31,16 +30,15 @@ public class MECombatPlugin extends MEPlugin {
 
     @Override
     public void initDependencies() {
-        PluginManager pluginManager = getServer().getPluginManager();
-        this.meCorePlugin = (MECorePlugin) pluginManager.getPlugin("MECore");
+        this.meCorePlugin = getPlugin(MECorePlugin.class);
 
-        this.mePlayerDataPlugin = (MEPlayerDataPlugin) pluginManager.getPlugin("MEPlayerData");
+        this.mePlayerDataPlugin = getPlugin(MEPlayerDataPlugin.class);
         this.playerDataManager = mePlayerDataPlugin.getPlayerDataManager();
 
-        this.meEntitiesPlugin = (MEEntitiesPlugin) pluginManager.getPlugin("MEEntities");
+        this.meEntitiesPlugin = getPlugin(MEEntitiesPlugin.class);
         this.entityManager = meEntitiesPlugin.getEntityManager();
 
-        this.meItemsPlugin = (MEItemsPlugin) pluginManager.getPlugin("MeItems");
+        this.meItemsPlugin = getPlugin(MEItemsPlugin.class);
         this.customItemManager = meItemsPlugin.getCustomItemManager();
     }
 

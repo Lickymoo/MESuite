@@ -1,0 +1,7 @@
+depend: [MECore, MEInventories, MEPlayerData, MEAbilities, MEItems, MEQuests]
+name: ${project.name}
+version: ${project.version}
+author: ${author}
+main: ${corepackage}.meaggregator.MEAggregatorPlugin
+description: ${project.description}
+api-version: ${mc-api-ver}

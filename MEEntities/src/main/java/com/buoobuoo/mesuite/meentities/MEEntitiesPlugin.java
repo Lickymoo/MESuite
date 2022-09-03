@@ -11,8 +11,8 @@ import com.buoobuoo.mesuite.meutils.navigation.RouteManager;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import lombok.Getter;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.EntityType;
-import org.bukkit.plugin.PluginManager;
 
 @Getter
 public class MEEntitiesPlugin extends MEPlugin {
@@ -30,8 +30,7 @@ public class MEEntitiesPlugin extends MEPlugin {
 
     @Override
     public void initDependencies() {
-        PluginManager pluginManager = getServer().getPluginManager();
-        this.meCorePlugin = (MECorePlugin) pluginManager.getPlugin("MECore");
+        this.meCorePlugin = getPlugin(MECorePlugin.class);
         this.commandManager = meCorePlugin.getCommandManager();
     }
 
@@ -71,6 +70,6 @@ public class MEEntitiesPlugin extends MEPlugin {
 
     @Override
     public void initTimers() {
-
+        Bukkit.getScheduler().runTaskLater(this, () -> entityManager.initFixtures(), 40);
     }
 }

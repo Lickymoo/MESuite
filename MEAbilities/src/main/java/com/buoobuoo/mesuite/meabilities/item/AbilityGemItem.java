@@ -27,6 +27,6 @@ public class AbilityGemItem extends CustomItem implements NotStackable {
         ib.setCustomModelData(ability.getType().getMat().getCustomModelData());
         ib.name(ability.getName());
         ib.lore(ability.getLore());
-        ib.nbtString(plugin, "me-ability-id", ability.getId());
+        ib.nbtString("me-ability-id", ability.getId());
     }
 }

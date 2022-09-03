@@ -1,7 +1,7 @@
-depend: [MEPlayerData]
-name: ${project.name}
-version: ${project.version}
-author: ${author}
-main: ${corepackage}.meabilities.MEAbilitiesPlugin
-description: ${project.description}
-api-version: ${mc-api-ver}
+depend: [MEPlayerData, MECore, MEItems]
+name: MEAbilities
+version: 1.0-SNAPSHOT
+author: Buby
+main: com.buoobuoo.mesuite.meabilities.MEAbilitiesPlugin
+description: Ability Management
+api-version: 1.19

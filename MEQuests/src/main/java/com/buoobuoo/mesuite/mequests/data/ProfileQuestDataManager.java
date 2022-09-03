@@ -4,8 +4,6 @@ import com.buoobuoo.mesuite.mecore.persistence.MongoHook;
 import com.buoobuoo.mesuite.meplayerdata.gamehandler.event.PlayerDataSaveEvent;
 import com.buoobuoo.mesuite.meplayerdata.model.ProfileData;
 import com.buoobuoo.mesuite.mequests.MEQuestsPlugin;
-import com.buoobuoo.mesuite.mequests.QuestManager;
-import com.buoobuoo.mesuite.mequests.impl.act1.ACT1_MQ1;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -5,6 +5,7 @@ E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\gamehandl
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\CustomItem.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\impl\weapon\starter\StarterStaffItem.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\interf\QuestItem.java
+E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\gamehandler\listener\ItemRequirementEventListener.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\interf\type\MagicWeapon.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\ItemUtils.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\additional\attributes\impl\attack\BaseRangedItemAttribute.java
@@ -24,6 +25,7 @@ E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\additiona
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\additional\attributes\impl\defense\MaximumHealthItemAttribute.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\additional\requirements\ItemRequirement.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\CustomItemRegistry.java
+E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\gamehandler\listener\PlayerCreativeInteractEventListener.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\CustomItemManager.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\CustomItems.java
 E:\IntelliJ\MESuite\MEItems\src\main\java\com\buoobuoo\mesuite\meitems\ItemRarity.java

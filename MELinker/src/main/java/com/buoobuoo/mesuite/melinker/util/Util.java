@@ -1,8 +1,16 @@
 package com.buoobuoo.mesuite.melinker.util;
 
 import com.buoobuoo.mesuite.melinker.redis.AbsPacketManager;
-import com.buoobuoo.mesuite.melinker.redis.packet.impl.*;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.PlayerJoinPacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.PlayerLeavePacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.PlayerMessagePacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.StaffMessagePacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.*;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.InstanceboundPlayerDataPacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.ProxyboundPlayerDataPacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerAnimatePacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerMovePacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerPosePacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.party.*;
 
 import java.util.Random;
@@ -22,11 +30,16 @@ public class Util {
     }
 
     public static void registerDefaultPackets(AbsPacketManager packetManager){
-        packetManager.registerPacket("PLAYER_JOIN", PlayerJoinMEPacket.class);
-        packetManager.registerPacket("PLAYER_LEAVE", PlayerLeaveMEPacket.class);
-        packetManager.registerPacket("PLAYER_DATA_GLOBAL", PlayerDataBroadcastPacket.class);
+        packetManager.registerPacket("PLAYER_JOIN", PlayerJoinPacket.class);
+        packetManager.registerPacket("PLAYER_LEAVE", PlayerLeavePacket.class);
         packetManager.registerPacket("PLAYER_MESSAGE", PlayerMessagePacket.class);
         packetManager.registerPacket("STAFF_MESSAGE", StaffMessagePacket.class);
+
+        packetManager.registerPacket("INSTANCE_BOUND_PLAYER_DATA", InstanceboundPlayerDataPacket.class);
+        packetManager.registerPacket("PROXY_BOUND_PLAYER_DATA", ProxyboundPlayerDataPacket.class);
+
+        packetManager.registerPacket("PLAYER_MOVE", PlayerMovePacket.class);
+        packetManager.registerPacket("PLAYER_ANIMATE", PlayerAnimatePacket.class);
 
         packetManager.registerPacket("REGISTER_SERVER", RegisterServerPacket.class);
         packetManager.registerPacket("REGISTER_SERVER_RESPONSE", RegisterServerResponsePacket.class);

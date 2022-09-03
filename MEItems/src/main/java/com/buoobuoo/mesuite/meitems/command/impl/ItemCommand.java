@@ -29,7 +29,6 @@ public class ItemCommand extends BaseCommand {
             @Subcommand("item")
             @CommandCompletion("@custom-items")
             public void item(Player player, String item) {
-                System.out.println("TEST");
                 ProfileData profileData = plugin.getPlayerDataManager().getProfile(player);
                 CustomItem handler = CustomItems.getHandler(item);
                 ItemStack stack = plugin.getCustomItemManager().getItem(profileData, handler);

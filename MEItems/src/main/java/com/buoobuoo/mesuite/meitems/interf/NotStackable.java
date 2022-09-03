@@ -9,6 +9,6 @@ public interface NotStackable extends Modifier {
 
     @Override
     default void modifierCreate(MEItemsPlugin plugin, ItemBuilder ib){
-        ib.nbtString(plugin, "me-rand-id", UUID.randomUUID().toString());
+        ib.nbtString("me-rand-id", UUID.randomUUID().toString());
     }
 }

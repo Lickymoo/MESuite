@@ -19,7 +19,6 @@ import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import lombok.Getter;
-import org.bukkit.plugin.PluginManager;
 
 @Getter
 public class MEChatPlugin extends MEPlugin {
@@ -45,18 +44,17 @@ public class MEChatPlugin extends MEPlugin {
 
     @Override
     public void initDependencies() {
-        PluginManager pluginManager = getServer().getPluginManager();
-        this.meCorePlugin = (MECorePlugin) pluginManager.getPlugin("MECore");
+        this.meCorePlugin = getPlugin(MECorePlugin.class);
         this.commandManager = meCorePlugin.getCommandManager();
         this.meLinker = meCorePlugin.getMeLinker();
 
-        this.meSocialPlugin = (MESocialPlugin) pluginManager.getPlugin("MESocial");
+        this.meSocialPlugin = getPlugin(MESocialPlugin.class);
         this.partyManager = meSocialPlugin.getPartyManager();
 
-        this.mePlayerDataPlugin = (MEPlayerDataPlugin) pluginManager.getPlugin("MEPlayerData");
+        this.mePlayerDataPlugin = getPlugin(MEPlayerDataPlugin.class);
         this.playerDataManager = mePlayerDataPlugin.getPlayerDataManager();
 
-        this.mePermissionsPlugin = (MEPermissionsPlugin) pluginManager.getPlugin("MEPermissions");
+        this.mePermissionsPlugin = getPlugin(MEPermissionsPlugin.class);
         this.playerPermissionDataManager = mePermissionsPlugin.getPlayerPermissionDataManager();
         this.permissionManager = mePermissionsPlugin.getPermissionManager();
     }

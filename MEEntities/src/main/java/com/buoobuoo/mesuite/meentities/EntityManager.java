@@ -63,12 +63,13 @@ public class EntityManager implements Listener {
                 RatEntity.class,
                 StoneGolemEntity.class
         );
+
     }
 
     public void initFixtures(){
         //register pemanent fixuture entities
         World mainWorld = MECorePlugin.getMainWorld();
-        AramoreBlacksmithNpc aramoreBlacksmithNpc = (AramoreBlacksmithNpc) spawnEntity(AramoreBlacksmithNpc.class, new Location(mainWorld, 162.5, 66, 78.5, 180, 0));
+        spawnEntity(AramoreBlacksmithNpc.class, new Location(mainWorld, 162.5, 66, 78.5, 180, 0));
     }
 
     public void registerEntities(CustomEntity entity){

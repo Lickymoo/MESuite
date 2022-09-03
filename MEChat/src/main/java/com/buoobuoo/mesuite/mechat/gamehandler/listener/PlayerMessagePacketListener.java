@@ -1,7 +1,6 @@
 package com.buoobuoo.mesuite.mechat.gamehandler.listener;
 
 import com.buoobuoo.mesuite.mechat.MEChatPlugin;
-import com.buoobuoo.mesuite.mecore.MECorePlugin;
 import com.buoobuoo.mesuite.melinker.gamehandler.event.MEPacketEvent;
 import com.buoobuoo.mesuite.melinker.redis.packet.MEPacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.PlayerMessagePacket;

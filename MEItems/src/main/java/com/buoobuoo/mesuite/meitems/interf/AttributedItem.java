@@ -54,7 +54,7 @@ public abstract class AttributedItem extends CustomItem {
             attribValues.add(inst.getAttributeString());
             ib.lore(4, attribute.itemLore(inst));
         }
-        ib.nbtString(plugin, "me-attrib-list", JavaUtils.fromList(attribValues));
+        ib.nbtString("me-attrib-list", JavaUtils.fromList(attribValues));
 
 
         List<String> reqValues = new ArrayList<>();
@@ -64,7 +64,7 @@ public abstract class AttributedItem extends CustomItem {
         }
         ib.lore(3, "");
 
-        ib.nbtString(plugin, "me-req-list", JavaUtils.fromList(reqValues));
+        ib.nbtString("me-req-list", JavaUtils.fromList(reqValues));
     }
 
     @Override

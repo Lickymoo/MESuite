@@ -5,7 +5,6 @@ import com.buoobuoo.mesuite.meentities.MEEntitiesPlugin;
 import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import com.buoobuoo.mesuite.mevfx.cinematic.SpectatorManager;
 import lombok.Getter;
-import org.bukkit.plugin.PluginManager;
 
 @Getter
 public class MEVFXPlugin extends MEPlugin {
@@ -19,8 +18,7 @@ public class MEVFXPlugin extends MEPlugin {
 
     @Override
     public void initDependencies() {
-        PluginManager pluginManager = getServer().getPluginManager();
-        this.meEntitiesPlugin = (MEEntitiesPlugin) pluginManager.getPlugin("MEEntities");
+        this.meEntitiesPlugin = getPlugin(MEEntitiesPlugin.class);
         this.entityManager = meEntitiesPlugin.getEntityManager();
     }
 

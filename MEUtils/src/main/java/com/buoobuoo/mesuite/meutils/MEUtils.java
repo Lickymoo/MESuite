@@ -4,10 +4,15 @@ import com.buoobuoo.mesuite.meutils.unicode.CharRepo;
 import com.buoobuoo.mesuite.meutils.unicode.UnicodeSpaceUtil;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Location;
+import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.util.BlockIterator;
 
 import java.util.ArrayList;
@@ -148,5 +153,11 @@ public class MEUtils {
             sb.append(StringUtils.repeat(UnicodeSpaceUtil.getNeg(2) + empty, (int) emptyBalls));
         }
         return sb.toString();
+    }
+
+    public static String getNBTString(ItemStack item, String tag){
+        ItemMeta meta = item.getItemMeta();
+        PersistentDataContainer pdc = meta.getPersistentDataContainer();
+        return pdc.get(NamespacedKey.minecraft(tag), PersistentDataType.STRING);
     }
 }
