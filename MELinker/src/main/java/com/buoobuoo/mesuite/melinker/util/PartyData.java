@@ -17,6 +17,7 @@ public class PartyData {
     private UUID partyLeader;
     private List<UUID> partyMembers = new ArrayList<>();
     private List<UUID> invitedPlayers = new ArrayList<>();
+    private boolean disbanded;
 
     public boolean isLeader(Player player){
         return partyLeader.equals(player.getUniqueId());
@@ -43,5 +44,12 @@ public class PartyData {
     public void messageParty(AbsPacketManager packetManager, String message){
         PartyMessagePacket partyMessagePacket = new PartyMessagePacket(partyID, message);
         packetManager.sendPacket(partyMessagePacket);
+    }
+
+    public List<UUID> getAllIDs(){
+        List<UUID> members = new ArrayList<>(partyMembers);
+        members.add(partyLeader);
+
+        return members;
     }
 }

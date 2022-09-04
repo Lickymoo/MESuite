@@ -1,4 +1,4 @@
-depend: [MECore]
+depend: [MECore, MEInventories]
 name: MESocial
 version: 1.0-SNAPSHOT
 author: Buby

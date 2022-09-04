@@ -1,6 +1,10 @@
 E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\command\impl\FriendCommand.java
 E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\friend\PlayerFriendData.java
 E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\friend\FriendManager.java
+E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\gamehandler\event\PartyUpdateEvent.java
+E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\inventory\PlayerSearchInventory.java
+E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\inventory\EmptyPartyInventory.java
+E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\inventory\PartyInventory.java
 E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\party\PartyManager.java
 E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\MESocialPlugin.java
 E:\IntelliJ\MESuite\MESocial\src\main\java\com\buoobuoo\mesuite\mesocial\command\impl\PartyCommand.java

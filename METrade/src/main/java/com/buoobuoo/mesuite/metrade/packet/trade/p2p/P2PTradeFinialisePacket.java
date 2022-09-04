@@ -1,13 +1,14 @@
 package com.buoobuoo.mesuite.metrade.packet.trade.p2p;
 
 import com.buoobuoo.mesuite.melinker.redis.packet.MEPacket;
-import com.buoobuoo.mesuite.metrade.p2p.inventory.impl.P2PTradeInstance;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.UUID;
+
 @Getter
 @AllArgsConstructor
-public class P2PTradeUpdatePacket extends MEPacket {
+public class P2PTradeFinialisePacket extends MEPacket {
 
-    private final P2PTradeInstance tradeInstance;
+    private final UUID uuid;
 }

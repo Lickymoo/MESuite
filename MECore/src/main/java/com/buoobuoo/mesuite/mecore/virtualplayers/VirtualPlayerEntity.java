@@ -1,27 +1,34 @@
 package com.buoobuoo.mesuite.mecore.virtualplayers;
 
+import com.buoobuoo.mesuite.mecore.MECorePlugin;
 import com.buoobuoo.mesuite.mecore.virtualplayers.net.NetworkManager;
 import com.buoobuoo.mesuite.mecore.virtualplayers.net.ServerGamePacketListener;
-import com.buoobuoo.mesuite.melinker.util.MELoc;
 import com.buoobuoo.mesuite.melinker.util.NetworkedPlayer;
 import com.buoobuoo.mesuite.meutils.PacketUtils;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import com.mojang.datafixers.util.Pair;
 import lombok.Getter;
 import lombok.Setter;
 import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.network.protocol.game.*;
-import net.minecraft.network.syncher.DataWatcher;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.PlayerDataStorage;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_19_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_19_R1.inventory.CraftItemStack;
+import org.bukkit.entity.Player;
 
-import java.util.UUID;
+import java.util.*;
 
+/*
+This isn't *technically* part of the entity system, so I'm isolating it in MECore rather than MEEntities
+ */
 @Getter
 @Setter
 public class VirtualPlayerEntity extends ServerPlayer {
@@ -32,9 +39,10 @@ public class VirtualPlayerEntity extends ServerPlayer {
     private final String skinSignature;
 
     private Location loc;
+    private Map<EquipmentSlot, ItemStack> equipmentMap = new HashMap<>();
 
     public VirtualPlayerEntity(Location loc, NetworkedPlayer networkedPlayer) {
-        super(((CraftWorld) loc.getWorld()).getHandle().getServer(), ((CraftWorld) loc.getWorld()).getHandle().getLevel(), new GameProfile(UUID.randomUUID(), networkedPlayer.getName()), null);
+        super(((CraftWorld) loc.getWorld()).getHandle().getServer(), ((CraftWorld) loc.getWorld()).getHandle().getLevel(), new GameProfile(networkedPlayer.getUuid(), networkedPlayer.getName()), null);
 
         this.playerID = networkedPlayer.getUuid();
         this.playerName = networkedPlayer.getName();
@@ -88,9 +96,55 @@ public class VirtualPlayerEntity extends ServerPlayer {
         update();
     }
 
+    public void setEquipment(EquipmentSlot slot, org.bukkit.inventory.ItemStack stack){
+        ItemStack itemStack = CraftItemStack.asNMSCopy(stack);
+        equipmentMap.put(slot, itemStack);
+        update();
+    }
+
     public void update(){
+        if(equipmentMap.size() != 0)
+            PacketUtils.sendPacketGlobal(new ClientboundSetEquipmentPacket(getBukkitEntity().getEntityId(), equipmentAsList()));
 
         PacketUtils.sendPacketGlobal(new ClientboundSetEntityDataPacket(getBukkitEntity().getEntityId(), getEntityData(), true));
 
     }
+
+    private List<Pair<EquipmentSlot, ItemStack>> equipmentAsList(){
+        List<Pair<EquipmentSlot, ItemStack>> list = new ArrayList<>();
+        for(Map.Entry<EquipmentSlot, ItemStack> entry : equipmentMap.entrySet()){
+            list.add(Pair.of(entry.getKey(), entry.getValue()));
+        }
+        return list;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

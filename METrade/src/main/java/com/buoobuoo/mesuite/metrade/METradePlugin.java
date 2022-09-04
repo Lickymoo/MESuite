@@ -6,9 +6,7 @@ import com.buoobuoo.mesuite.meinventories.MEInventoriesPlugin;
 import com.buoobuoo.mesuite.melinker.redis.spigot.SpigotMELinker;
 import com.buoobuoo.mesuite.metrade.command.TradeCommand;
 import com.buoobuoo.mesuite.metrade.p2p.P2PTradeManager;
-import com.buoobuoo.mesuite.metrade.packet.trade.p2p.P2PTradeCancelPacket;
-import com.buoobuoo.mesuite.metrade.packet.trade.p2p.P2PTradeInitiatePacket;
-import com.buoobuoo.mesuite.metrade.packet.trade.p2p.P2PTradeUpdatePacket;
+import com.buoobuoo.mesuite.metrade.packet.trade.p2p.*;
 import com.buoobuoo.mesuite.meutils.command.CommandManager;
 import com.buoobuoo.mesuite.meutils.model.MEPlugin;
 import lombok.Getter;
@@ -36,9 +34,11 @@ public class METradePlugin extends MEPlugin {
         this.meInventoriesPlugin = getPlugin(MEInventoriesPlugin.class);
         this.inventoryManager = meInventoriesPlugin.getInventoryManager();
 
-        this.meLinker.getPacketManager().registerPacket("P2P_TRADE_UPDATE", P2PTradeUpdatePacket.class);
+        this.meLinker.getPacketManager().registerPacket("P2P_TRADE_UPDATE", P2PTradeUpdateOfferPacket.class);
         this.meLinker.getPacketManager().registerPacket("P2P_TRADE_INITIATE", P2PTradeInitiatePacket.class);
         this.meLinker.getPacketManager().registerPacket("P2P_TRADE_CANCEL", P2PTradeCancelPacket.class);
+        this.meLinker.getPacketManager().registerPacket("P2P_TRADE_ACCEPT_STATUS", P2PTradeUpdateAcceptStatusPacket.class);
+        this.meLinker.getPacketManager().registerPacket("P2P_TRADE_FINALISE", P2PTradeFinialisePacket.class);
     }
 
     @Override
@@ -48,7 +48,9 @@ public class METradePlugin extends MEPlugin {
 
     @Override
     public void initListeners() {
-
+        registerEvents(
+                p2PTradeManager
+        );
     }
 
     @Override

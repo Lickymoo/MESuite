@@ -6,10 +6,12 @@ import com.buoobuoo.mesuite.melinker.gamehandler.event.MEPacketEvent;
 import com.buoobuoo.mesuite.melinker.redis.packet.MEPacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.PlayerLeavePacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerAnimatePacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerEquipmentPacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerMovePacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerPosePacket;
 import com.buoobuoo.mesuite.melinker.util.MELoc;
 import com.buoobuoo.mesuite.melinker.util.NetworkedPlayer;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Pose;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -45,6 +47,7 @@ public class VirtualPlayerManager implements Listener {
             NetworkedPlayer networkedPlayer = plugin.getNetworkedPlayer(uuid);
             networkedPlayer.setLocation(playerMovePacket.getLoc());
             VirtualPlayerEntity virtualPlayerEntity = getVirtualPlayer(networkedPlayer);
+            if (virtualPlayerEntity == null) return;
             virtualPlayerEntity.setLoc(meLocToBukkit(networkedPlayer.getLocation()));
             virtualPlayerEntity.teleport();
         }
@@ -63,6 +66,7 @@ public class VirtualPlayerManager implements Listener {
             NetworkedPlayer networkedPlayer = plugin.getNetworkedPlayer(uuid);
 
             VirtualPlayerEntity virtualPlayerEntity = getVirtualPlayer(networkedPlayer);
+            if (virtualPlayerEntity == null) return;
             virtualPlayerEntity.setPose(bukkitToNMSPose(posePacket.getPose()));
         }
     }
@@ -101,8 +105,32 @@ public class VirtualPlayerManager implements Listener {
             NetworkedPlayer networkedPlayer = plugin.getNetworkedPlayer(uuid);
 
             VirtualPlayerEntity virtualPlayerEntity = getVirtualPlayer(networkedPlayer);
+            if (virtualPlayerEntity == null) return;
             virtualPlayerEntity.animate(animatePacket.getAnimationID());
         }
+    }
+
+    //on equip item
+    @EventHandler
+    public void onEquip(MEPacketEvent event){
+        MEPacket packet = event.getPacket();
+
+        if (packet instanceof PlayerEquipmentPacket equipmentPacket){
+            UUID uuid = equipmentPacket.getUuid();
+            Player player = Bukkit.getPlayer(uuid);
+            if(player != null)
+                return;
+
+            NetworkedPlayer networkedPlayer = plugin.getNetworkedPlayer(uuid);
+
+            VirtualPlayerEntity virtualPlayerEntity = getVirtualPlayer(networkedPlayer);
+            if (virtualPlayerEntity == null) return;
+            virtualPlayerEntity.setEquipment(getEquipmentSlot(equipmentPacket.getEquipmentSlot()), equipmentPacket.getItemStack());
+        }
+    }
+
+    private EquipmentSlot getEquipmentSlot(String name){
+        return EquipmentSlot.byName(name);
     }
 
     @EventHandler
@@ -117,6 +145,7 @@ public class VirtualPlayerManager implements Listener {
 
             NetworkedPlayer networkedPlayer = plugin.getNetworkedPlayer(uuid);
             VirtualPlayerEntity virtualPlayerEntity = getVirtualPlayer(networkedPlayer);
+            if (virtualPlayerEntity == null) return;
             virtualPlayerEntity.removeEntity();
             virtualPlayerMap.remove(uuid);
         }
@@ -144,6 +173,7 @@ public class VirtualPlayerManager implements Listener {
     }
 
     public VirtualPlayerEntity getVirtualPlayer(NetworkedPlayer networkedPlayer){
+        if (networkedPlayer == null) return null;
         return virtualPlayerMap.computeIfAbsent(networkedPlayer.getUuid(), key -> new VirtualPlayerEntity(meLocToBukkit(networkedPlayer.getLocation()), networkedPlayer));
     }
 

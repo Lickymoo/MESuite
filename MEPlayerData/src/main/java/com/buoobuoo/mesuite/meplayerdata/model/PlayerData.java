@@ -18,6 +18,7 @@ public class PlayerData {
 
     //settings
     private boolean setting_gui_sliders = false;
+    private boolean setting_view_virtualplayers = true;
 
     //transients
     private transient UUID activeProfileID;

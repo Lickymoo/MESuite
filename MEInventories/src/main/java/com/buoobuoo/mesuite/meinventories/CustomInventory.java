@@ -59,4 +59,8 @@ public class CustomInventory implements Listener, InventoryHolder {
 
     public void onBottomClick(InventoryClickEvent event){
     }
+
+    public void openInventory(){
+        player.openInventory(getInventory());
+    }
 }

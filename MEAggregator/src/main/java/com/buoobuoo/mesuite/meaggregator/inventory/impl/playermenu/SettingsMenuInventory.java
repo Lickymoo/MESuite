@@ -26,6 +26,14 @@ public class SettingsMenuInventory extends CustomInventory {
             Inventory inv = new SettingsMenuInventory(plugin, player).getInventory();
             player.openInventory(inv);
         }, 0);
+
+        this.addHandler(event -> {
+            PlayerData playerData = plugin.getPlayerDataManager().getData(player);
+            playerData.setSetting_view_virtualplayers(!playerData.isSetting_view_virtualplayers());
+
+            Inventory inv = new SettingsMenuInventory(plugin, player).getInventory();
+            player.openInventory(inv);
+        }, 9);
     }
 
     @Override
@@ -35,13 +43,19 @@ public class SettingsMenuInventory extends CustomInventory {
 
         //slider bar
         boolean setting_gui_sliders = playerData.isSetting_gui_sliders();
-        ItemStack setting_gui_sliders_item = new ItemBuilder(setting_gui_sliders ? Material.GREEN_WOOL : Material.RED_WOOL)
-                .name("&7Dispaly Health & Mana bars as sliders")
-                .lore(setting_gui_sliders ? "&aENABLED" : "&cDISABLED")
-                .create();
-
+        ItemStack setting_gui_sliders_item = settingToggleItem("&7Dispaly Health & Mana bars as sliders", playerData.isSetting_gui_sliders());
         inv.setItem(0, setting_gui_sliders_item);
 
+        ItemStack setting_view_virtualplayers_item = settingToggleItem("&7Dispaly Players on other servers", playerData.isSetting_view_virtualplayers());
+        inv.setItem(9, setting_view_virtualplayers_item);
+
         return inv;
+    }
+
+    private ItemStack settingToggleItem(String name, boolean value){
+        return new ItemBuilder(value ? Material.GREEN_WOOL : Material.RED_WOOL)
+                .name(name)
+                .lore(value ? "&aENABLED" : "&cDISABLED")
+                .create();
     }
 }

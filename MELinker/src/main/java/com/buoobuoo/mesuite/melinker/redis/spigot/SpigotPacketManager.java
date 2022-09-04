@@ -26,10 +26,8 @@ public final class SpigotPacketManager implements AbsPacketManager, Listener {
         this.plugin = plugin;
         this.redisConnection = redisConnection;
         Util.registerDefaultPackets(this);
-
+        Util.registerSpigotDefaultPackets(this);
         //spigot specific
-        registerPacket("PLAYER_TOGGLE_POSE", PlayerPosePacket.class);
-
         plugin.getLogger().info("Registered " + packetRegistry.size() + " packets");
     }
 

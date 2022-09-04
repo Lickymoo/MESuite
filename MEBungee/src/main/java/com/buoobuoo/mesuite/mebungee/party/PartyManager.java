@@ -11,9 +11,7 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class PartyManager implements Listener {
 
@@ -78,18 +76,37 @@ public class PartyManager implements Listener {
             return;
         }
 
+        //ids by invite
+        if(packet instanceof PartyDataByInvitePacket partyDataByInvitePacket){
+            UUID playerID = partyDataByInvitePacket.getPlayerID();
+            List<PartyData> partyIds = new ArrayList<>();
+            for(PartyData partyData : partyDataMap.values()){
+                if(partyData.isInvited(playerID))
+                    partyIds.add(partyData);
+            }
+            PartyDataByInviteResponsePacket responsePacket = new PartyDataByInviteResponsePacket(partyIds);
+            partyDataByInvitePacket.respond(plugin.getMeLinker().getPacketManager(), responsePacket);
+            return;
+        }
+
         //create party
         if(packet instanceof PartyCreatePacket createPartyPacket){
             PartyData partyData = createParty(createPartyPacket.getOwnerID());
 
             PartyDataRequestResponsePacket responsePacket = getPartyAsPacket(partyData);
             createPartyPacket.respond(plugin.getMeLinker().getPacketManager(), responsePacket);
+
+            PartyUpdatePacket updatePacket = new PartyUpdatePacket(partyData.getPartyID());
+            plugin.getMeLinker().getPacketManager().sendPacket(updatePacket);
             return;
         }
 
         //disband
         if(packet instanceof PartyDisbandPacket partyDisbandPacket){
             partyDataMap.remove(partyDisbandPacket.getPartyID());
+
+            PartyUpdatePacket updatePacket = new PartyUpdatePacket(partyDisbandPacket.getPartyID());
+            plugin.getMeLinker().getPacketManager().sendPacket(updatePacket);
             return;
         }
 
@@ -97,6 +114,9 @@ public class PartyManager implements Listener {
         if(packet instanceof PartyPlayerLeavePacket partyPlayerLeavePacket){
             PartyData partyData = getPartyByID(partyPlayerLeavePacket.getPartyID());
             partyData.getPartyMembers().remove(partyPlayerLeavePacket.getMemberID());
+
+            PartyUpdatePacket updatePacket = new PartyUpdatePacket(partyData.getPartyID());
+            plugin.getMeLinker().getPacketManager().sendPacket(updatePacket);
             return;
         }
 
@@ -104,6 +124,9 @@ public class PartyManager implements Listener {
         if(packet instanceof PartyPlayerInvitePacket partyPlayerInvitePacket){
             PartyData partyData = getPartyByID(partyPlayerInvitePacket.getPartyID());
             partyData.getInvitedPlayers().add(partyPlayerInvitePacket.getMemberID());
+
+            PartyUpdatePacket updatePacket = new PartyUpdatePacket(partyData.getPartyID());
+            plugin.getMeLinker().getPacketManager().sendPacket(updatePacket);
             return;
         }
 
@@ -123,6 +146,8 @@ public class PartyManager implements Listener {
             ChangePlayerServerPacket changePlayerServerPacket = new ChangePlayerServerPacket(player, owner.getServer().getInfo().getName());
             plugin.getMeLinker().getPacketManager().sendPacket(changePlayerServerPacket);
 
+            PartyUpdatePacket updatePacket = new PartyUpdatePacket(partyData.getPartyID());
+            plugin.getMeLinker().getPacketManager().sendPacket(updatePacket);
             return;
         }
 
@@ -132,6 +157,9 @@ public class PartyManager implements Listener {
             PartyData partyData = getPartyByID(partyPlayerKickPacket.getPartyID());
             partyData.getInvitedPlayers().remove(player);
             partyData.getPartyMembers().remove(player);
+
+            PartyUpdatePacket updatePacket = new PartyUpdatePacket(partyData.getPartyID());
+            plugin.getMeLinker().getPacketManager().sendPacket(updatePacket);
             return;
         }
 
@@ -144,6 +172,9 @@ public class PartyManager implements Listener {
             partyData.setPartyLeader(player);
             partyData.getPartyMembers().add(cachedLeader);
             partyData.getPartyMembers().remove(player);
+
+            PartyUpdatePacket updatePacket = new PartyUpdatePacket(partyData.getPartyID());
+            plugin.getMeLinker().getPacketManager().sendPacket(updatePacket);
             return;
         }
 

@@ -2,6 +2,8 @@ package com.buoobuoo.mesuite.mesocial;
 
 import com.buoobuoo.mesuite.mecore.MECorePlugin;
 import com.buoobuoo.mesuite.mecore.persistence.MongoHook;
+import com.buoobuoo.mesuite.meinventories.CustomInventoryManager;
+import com.buoobuoo.mesuite.meinventories.MEInventoriesPlugin;
 import com.buoobuoo.mesuite.melinker.redis.spigot.SpigotMELinker;
 import com.buoobuoo.mesuite.melinker.util.NetworkedPlayer;
 import com.buoobuoo.mesuite.mesocial.command.impl.FriendCommand;
@@ -22,6 +24,9 @@ public class MESocialPlugin extends MEPlugin {
     private CommandManager commandManager;
     private SpigotMELinker meLinker;
 
+    private MEInventoriesPlugin meInventoriesPlugin;
+    private CustomInventoryManager inventoryManager;
+
     //local managers
     private PartyManager partyManager;
     private FriendManager friendManager;
@@ -39,9 +44,10 @@ public class MESocialPlugin extends MEPlugin {
         this.meCorePlugin = getPlugin(MECorePlugin.class);
         this.mongoHook = meCorePlugin.getMongoHook();
         this.meLinker = meCorePlugin.getMeLinker();
-
         this.commandManager = meCorePlugin.getCommandManager();
-        defineCommands();
+
+        this.meInventoriesPlugin = getPlugin(MEInventoriesPlugin.class);
+        this.inventoryManager = meInventoriesPlugin.getInventoryManager();
     }
 
     @Override

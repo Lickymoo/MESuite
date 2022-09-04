@@ -1,4 +1,4 @@
-depend: [MECore]
+depend: [MECore, MEInventories]
 name: ${project.name}
 version: ${project.version}
 author: ${author}

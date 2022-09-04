@@ -1,11 +1,15 @@
 package com.buoobuoo.mesuite.mesocial.party;
 
+import com.buoobuoo.mesuite.melinker.gamehandler.event.MEPacketEvent;
 import com.buoobuoo.mesuite.melinker.redis.AbsPacketManager;
+import com.buoobuoo.mesuite.melinker.redis.packet.MEPacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.PlayerMessagePacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.party.*;
 import com.buoobuoo.mesuite.melinker.util.NetworkedPlayer;
 import com.buoobuoo.mesuite.melinker.util.PartyData;
 import com.buoobuoo.mesuite.mesocial.MESocialPlugin;
+import com.buoobuoo.mesuite.mesocial.gamehandler.event.PartyInviteUpdateEvent;
+import com.buoobuoo.mesuite.mesocial.gamehandler.event.PartyUpdateEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -40,6 +44,23 @@ public class PartyManager implements Listener {
             PartyData newParty = createParty.getPartyData();
             player.sendMessage("Created new party " + newParty.getPartyID());
         });
+    }
+
+    public PartyData createPartySync(Player player){
+        AbsPacketManager packetManager = plugin.getMeLinker().getPacketManager();
+        PartyDataRequestResponsePacket getPartyData = new PartyDataByPlayerRequest(player.getUniqueId(), null).await(packetManager, 3);
+
+        PartyData partyData = getPartyData.getPartyData();
+        if(partyData != null){
+            player.sendMessage("You are already in a party");
+            return null;
+        }
+
+
+        PartyDataRequestResponsePacket createParty = new PartyCreatePacket(player.getUniqueId(), null).await(packetManager, 3);
+        PartyData newParty = createParty.getPartyData();
+        player.sendMessage("Created new party " + newParty.getPartyID());
+        return newParty;
     }
 
     public void disband(Player player){
@@ -190,7 +211,7 @@ public class PartyManager implements Listener {
             packetManager.sendPacket(kickPacket);
 
             PlayerMessagePacket messagePacket = new PlayerMessagePacket(targetID, "You have been kicked from the party");
-            partyData.messageParty(packetManager, player.getName() + " has been kicked from the party");
+            partyData.messageParty(packetManager, target.getName() + " has been kicked from the party");
             packetManager.sendPacket(messagePacket);
         });
     }
@@ -272,5 +293,25 @@ public class PartyManager implements Listener {
             PartyTeleportSingularPacket partyTeleportSingularPacket = new PartyTeleportSingularPacket(partyData.getPartyID(), player.getUniqueId());
             packetManager.sendPacket(partyTeleportSingularPacket);
         });
+    }
+
+    @EventHandler
+    public void onPartyUpdate(MEPacketEvent event){
+        MEPacket packet = event.getPacket();
+
+        if(packet instanceof PartyUpdatePacket updatePacket){
+            PartyUpdateEvent updateEvent = new PartyUpdateEvent(updatePacket.getPartyID());
+            Bukkit.getPluginManager().callEvent(updateEvent);
+        }
+    }
+
+    @EventHandler
+    public void onInviteUpdate(MEPacketEvent event){
+        MEPacket packet = event.getPacket();
+
+        if(packet instanceof PartyPlayerInvitePacket invitePacket){
+            PartyInviteUpdateEvent inviteUpdateEvent = new PartyInviteUpdateEvent(invitePacket.getMemberID());
+            Bukkit.getPluginManager().callEvent(inviteUpdateEvent);
+        }
     }
 }

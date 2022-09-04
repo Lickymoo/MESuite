@@ -1,7 +1,8 @@
+E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\packet\trade\p2p\P2PTradeFinialisePacket.java
 E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\p2p\P2PTradeManager.java
 E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\METradePlugin.java
-E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\p2p\inventory\impl\P2PTradeInstance.java
-E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\packet\trade\p2p\P2PTradeUpdatePacket.java
+E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\packet\trade\p2p\P2PTradeUpdateAcceptStatusPacket.java
+E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\packet\trade\p2p\P2PTradeUpdateOfferPacket.java
 E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\packet\trade\p2p\P2PTradeCancelPacket.java
 E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\command\TradeCommand.java
 E:\IntelliJ\MESuite\METrade\src\main\java\com\buoobuoo\mesuite\metrade\packet\trade\p2p\P2PTradeInitiatePacket.java

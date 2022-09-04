@@ -2,6 +2,7 @@ com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyPlayerJoinPacket.clas
 com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyTeleportSingularPacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\PlayerMessagePacket.class
 com\buoobuoo\mesuite\melinker\util\MELoc.class
+com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyUpdatePacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\MECallbackResponsePacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\MEPacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyMessagePacket.class
@@ -19,6 +20,7 @@ com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyDataRequestPacket.cla
 com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyPlayerKickPacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\net\playerdata\virtualplayer\PlayerAnimatePacket$PlayerAnimation.class
 com\buoobuoo\mesuite\melinker\redis\spigot\SpigotRedisConnection.class
+com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyDataByInviteResponsePacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\StaffMessagePacket.class
 com\buoobuoo\mesuite\melinker\redis\spigot\SpigotChannelHandler.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\net\playerdata\virtualplayer\PlayerPosePacket.class
@@ -38,6 +40,7 @@ com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyPlayerLeavePacket.cla
 com\buoobuoo\mesuite\melinker\redis\AbsPacketManager.class
 com\buoobuoo\mesuite\melinker\redis\bungee\BungeeChannelHandler.class
 com\buoobuoo\mesuite\melinker\redis\bungee\BungeeChannelHandler$1.class
+com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyDataByInvitePacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\net\playerdata\InstanceboundPlayerDataPacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\net\playerdata\virtualplayer\PlayerAnimatePacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\PlayerLeavePacket.class
@@ -46,6 +49,7 @@ com\buoobuoo\mesuite\melinker\redis\spigot\SpigotPacketManager.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyCreatePacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\net\ChangePlayerServerPacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\net\InstanceboundPingPacket.class
+com\buoobuoo\mesuite\melinker\redis\packet\impl\net\playerdata\virtualplayer\PlayerEquipmentPacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\MECallbackPacket.class
 com\buoobuoo\mesuite\melinker\redis\packet\impl\party\PartyPlayerPromotePacket.class
 com\buoobuoo\mesuite\melinker\redis\spigot\SpigotMELinker.class

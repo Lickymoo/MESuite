@@ -5,6 +5,7 @@ import com.buoobuoo.mesuite.mecore.gamehandler.event.UpdateSecondEvent;
 import com.buoobuoo.mesuite.mecore.gamehandler.event.UpdateTickEvent;
 import com.buoobuoo.mesuite.mecore.gamehandler.listener.*;
 import com.buoobuoo.mesuite.mecore.gamehandler.listener.virtualplayer.PlayerAnimateEventListener;
+import com.buoobuoo.mesuite.mecore.gamehandler.listener.virtualplayer.PlayerEquipmentEventListener;
 import com.buoobuoo.mesuite.mecore.gamehandler.listener.virtualplayer.PlayerMoveEventListener;
 import com.buoobuoo.mesuite.mecore.gamehandler.listener.virtualplayer.PlayerTogglePoseEventListener;
 import com.buoobuoo.mesuite.mecore.persistence.MongoHook;
@@ -34,6 +35,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.plugin.Plugin;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -93,11 +95,13 @@ public class MECorePlugin extends MEPlugin {
                 new BlockGrowEventListener(this),
                 new PlayerJoinEventListener(this),
                 new PlayerLeaveEventListener(this),
+                new PlayerArmorEquipListener(new ArrayList<>()),
 
                 //virtual player
                 new PlayerMoveEventListener(this),
                 new PlayerTogglePoseEventListener(this),
-                new PlayerAnimateEventListener(this)
+                new PlayerAnimateEventListener(this),
+                new PlayerEquipmentEventListener(this)
         );
 
         new AnvilRenamePacketListener(this);

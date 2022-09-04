@@ -9,6 +9,7 @@ import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.*;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.InstanceboundPlayerDataPacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.ProxyboundPlayerDataPacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerAnimatePacket;
+import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerEquipmentPacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerMovePacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.net.playerdata.virtualplayer.PlayerPosePacket;
 import com.buoobuoo.mesuite.melinker.redis.packet.impl.party.*;
@@ -62,5 +63,16 @@ public class Util {
         packetManager.registerPacket("PARTY_JOIN", PartyPlayerJoinPacket.class);
         packetManager.registerPacket("PARTY_TELEPORT", PartyTeleportPacket.class);
         packetManager.registerPacket("PARTY_TELEPORT_SINGULAR", PartyTeleportSingularPacket.class);
+
+        packetManager.registerPacket("PARTY_UPDATE", PartyUpdatePacket.class);
+
+        packetManager.registerPacket("PARTY_BY_INVITES", PartyDataByInvitePacket.class);
+        packetManager.registerPacket("PARTY_BY_INVITES_RESPONSE", PartyDataByInviteResponsePacket.class);
+    }
+
+    public static void registerSpigotDefaultPackets(AbsPacketManager packetManager){
+        packetManager.registerPacket("PLAYER_TOGGLE_POSE", PlayerPosePacket.class);
+        packetManager.registerPacket("PLAYER_EQUIPMENT", PlayerEquipmentPacket.class);
+
     }
 }
